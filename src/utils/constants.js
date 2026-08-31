@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
     'Frontend Developer',
     'React Engineer',
   ],
-  email: '[EMAIL_ADDRESS]',
+  email: 'anjan.shrestha.tech@gmail.com',
   resumeUrl: '/AnjanShrestha_CV.pdf',
 };
 
