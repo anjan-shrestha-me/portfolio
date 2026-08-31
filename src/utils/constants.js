@@ -7,12 +7,11 @@ export const PERSONAL_INFO = {
   taglineRoles: [
     'Frontend Developer',
     'React Engineer',
-    // 'UI/UX Enthusiast',
-    // 'Open Source Contributor',
   ],
-  email: 'anjan.shrestha.tech@gmail.com',
-  resumeUrl: '/resume.pdf',
+  email: '[EMAIL_ADDRESS]',
+  resumeUrl: '/my_cv.pdf',
 };
+
 
 // Primary navigation — used by Navbar for both desktop and mobile menus
 export const NAV_LINKS = [
@@ -29,7 +28,7 @@ export const SOCIAL_LINKS = [
   { label: 'GitHub', url: 'https://github.com/anjan-shrestha-me', icon: 'FaGithub' },
   { label: 'LinkedIn', url: 'https://linkedin.com/', icon: 'FaLinkedin' },
   // { label: 'Twitter', url: 'https://twitter.com/', icon: 'FaTwitter' },
-  { label: 'Email', url: 'https://mail.google.com/mail/?view=cm&fs=1&to=anjan.shrestha.tech@gmail.com', icon: 'FaEnvelope' },
+  { label: 'Email', url: 'https://mail.google.com/mail/?view=cm&fs=1&to=[EMAIL_ADDRESS]', icon: 'FaEnvelope' },
 ];
 
 
