@@ -1,4 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
+import { scroller } from "react-scroll";
 import {
   FaGithub,
   FaLinkedin,
@@ -9,6 +10,7 @@ import {
 import {
   PERSONAL_INFO,
   SOCIAL_LINKS,
+  SCROLL_CONFIG,
 } from "../../utils/constants";
 
 import Button from "../ui/Button";
@@ -79,7 +81,7 @@ const Hero = () => {
 
             <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4">
 
-              <Button>
+              <Button onClick={() => scroller.scrollTo("projects", SCROLL_CONFIG)}>
                 View Projects
               </Button>
 

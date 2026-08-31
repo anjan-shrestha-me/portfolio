@@ -54,7 +54,7 @@ const ProjectCard = ({ project }) => {
 
         <div className="mt-6 flex flex-wrap gap-2">
 
-          {project.tech?.map((item) => (
+          {(project.tags || project.tech)?.map((item) => (
             <span
               key={item}
               className="
@@ -97,17 +97,28 @@ const ProjectCard = ({ project }) => {
           </Link>
 
           <div className="flex gap-4">
-            {project.live && (
+            {project.repoUrl && (
               <a
-                href={project.live}
+                href={project.repoUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="text-slate-500 transition hover:text-blue-600"
+                title="GitHub Repository"
+              >
+                <FiGithub size={20} />
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-500 transition hover:text-blue-600"
+                title="Live Site"
               >
                 <FiArrowUpRight size={20} />
               </a>
             )}
-
           </div>
 
         </div>
