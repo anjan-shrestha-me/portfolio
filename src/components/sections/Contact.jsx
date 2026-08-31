@@ -9,13 +9,11 @@ import {
 } from "react-icons/fi";
 
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 import SectionHeading from "../ui/SectionHeading";
 import {
   PERSONAL_INFO,
   SOCIAL_LINKS,
-  EMAILJS_CONFIG,
 } from "../../utils/constants";
 
 const Contact = () => {
@@ -40,22 +38,38 @@ const Contact = () => {
     try {
       setLoading(true);
 
-      await emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
-        formData,
-        EMAILJS_CONFIG.publicKey
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${PERSONAL_INFO.email}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `New Portfolio Message from ${formData.name}`,
+          }),
+        }
       );
 
-      alert("Message sent successfully!");
+      const result = await response.json();
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
+      if (response.ok && (result.success === "true" || result.success === true)) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        alert(result.message || "Failed to send message.");
+      }
     } catch (err) {
-      alert("Failed to send message.");
+      console.error("FormSubmit Error:", err);
+      alert("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -113,17 +127,16 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-    mt-1
-    block
-    break-all
-    text-base
-    font-semibold
-    text-slate-900
-    transition-colors
-    hover:text-violet-600
-    dark:text-white
-    dark:hover:text-violet-400
-  "
+                     mt-1
+                     block
+                     break-all
+                     text-base
+                     font-semibold
+                     text-slate-900
+                      transition-colors
+                     hover:text-violet-600
+                     dark:text-white
+                     dark:hover:text-violet-400"
                   >
                     {PERSONAL_INFO.email}
                   </a>

@@ -1,8 +1,8 @@
 // Personal info — edit these to update the whole site
 export const PERSONAL_INFO = {
   name: 'Anjan Shrestha',
-  photo: "/images/profile.jpg", 
-  location: "Kathmandu, Nepal", 
+  photo: "/images/profile.jpg",
+  location: "Kathmandu, Nepal",
   role: 'Frontend Developer',
   taglineRoles: [
     'Frontend Developer',
@@ -32,12 +32,6 @@ export const SOCIAL_LINKS = [
   { label: 'Email', url: 'https://mail.google.com/mail/?view=cm&fs=1&to=anjan.shrestha.tech@gmail.com', icon: 'FaEnvelope' },
 ];
 
-// EmailJS config — replace with your own IDs from emailjs.com dashboard
-export const EMAILJS_CONFIG = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-};
 
 // Scroll-spy / react-scroll shared settings
 export const SCROLL_CONFIG = {
