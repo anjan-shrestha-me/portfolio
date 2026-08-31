@@ -9,13 +9,11 @@ import {
 } from "react-icons/fi";
 
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 import SectionHeading from "../ui/SectionHeading";
 import {
   PERSONAL_INFO,
   SOCIAL_LINKS,
-  EMAILJS_CONFIG,
 } from "../../utils/constants";
 
 const Contact = () => {
@@ -40,20 +38,33 @@ const Contact = () => {
     try {
       setLoading(true);
 
-      await emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
-        formData,
-        EMAILJS_CONFIG.publicKey
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${PERSONAL_INFO.email}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `New Contact Form Message from ${formData.name}`,
+          }),
+        }
       );
 
-      alert("Message sent successfully!");
-
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send message.");
+      }
     } catch (err) {
       alert("Failed to send message.");
     } finally {

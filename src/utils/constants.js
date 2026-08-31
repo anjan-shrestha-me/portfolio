@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
     'React Engineer',
   ],
   email: '[EMAIL_ADDRESS]',
-  resumeUrl: '/my_cv.pdf',
+  resumeUrl: '/AnjanShrestha_CV.pdf',
 };
 
 
@@ -26,8 +26,7 @@ export const NAV_LINKS = [
 // Social links — used by Hero and Footer
 export const SOCIAL_LINKS = [
   { label: 'GitHub', url: 'https://github.com/anjan-shrestha-me', icon: 'FaGithub' },
-  { label: 'LinkedIn', url: 'https://linkedin.com/', icon: 'FaLinkedin' },
-  // { label: 'Twitter', url: 'https://twitter.com/', icon: 'FaTwitter' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/anjan-shrestha-b56769376', icon: 'FaLinkedin' },
   { label: 'Email', url: 'https://mail.google.com/mail/?view=cm&fs=1&to=[EMAIL_ADDRESS]', icon: 'FaEnvelope' },
 ];
 
@@ -38,3 +37,5 @@ export const SCROLL_CONFIG = {
   smooth: true,
   offset: -80, // accounts for fixed navbar height
 };
+
+

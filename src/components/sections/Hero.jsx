@@ -87,6 +87,8 @@ const Hero = () => {
                 variant="secondary"
                 as="a"
                 href={PERSONAL_INFO.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Resume
               </Button>
